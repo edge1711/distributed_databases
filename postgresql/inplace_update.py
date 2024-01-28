@@ -31,7 +31,7 @@ if __name__ == '__main__':
 
         start_datetime = datetime.datetime.now()
 
-        with concurrent.futures.ThreadPoolExecutor(max_workers=1) as executor:
+        with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
             [executor.submit(increment_inplace_update, cur, conn) for _ in range(1, 10000)]
 
         end_datetime = datetime.datetime.now()
